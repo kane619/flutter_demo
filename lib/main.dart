@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: '智客',
       theme: ThemeData(
         primarySwatch: Colors.red,
         // This makes the visual density adapt to the platform that you run
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Flutter Demo"),
+          title: Text("智客"),
         ),
         body: Text("tabBar"),
         bottomNavigationBar: BottomNavigationBar(
