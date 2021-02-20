@@ -1,4 +1,4 @@
-package com.example.zk
+package com.movitech.zhike
 
 import io.flutter.embedding.android.FlutterActivity
 
