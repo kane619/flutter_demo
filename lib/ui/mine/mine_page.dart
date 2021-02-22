@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zk/constant/app_colors.dart';
 import 'package:zk/constant/app_images.dart';
 import 'package:zk/constant/constant.dart';
@@ -9,7 +8,6 @@ import 'package:zk/ui/login/login_ui.dart';
 import 'package:zk/util/navigator_util.dart';
 import 'package:zk/util/screen_util.dart';
 import 'package:zk/widget/common_widget.dart';
-import 'package:zk/widget/icon_text.dart';
 
 class MinePage extends StatefulWidget {
   @override
@@ -34,19 +32,15 @@ class MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin{
               children: [
                 Container(
                   width: Screen.w(),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(image: NetworkImage("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2588111137,2818876915&fm=26&gp=0.jpg"), fit: BoxFit.cover),
-                  ),
                   child: Padding(
                     padding: EdgeInsets.only(left: Screen.w(45), right: Screen.w(45), top: Screen.h(90), bottom: Screen.h(180)),
                     child: Column(
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            IconText("切换角色", padding: EdgeInsets.only(right: Screen.w(20)), textAlign: TextAlign.center, icon: Icon(Icons.add_link), iconSize: Screen.sp(55), style: TextStyle(fontSize: Screen.sp(46), color: AppColors.color_FFFFFF,)),
                             GestureDetector(
-                              child: ImageIcon(AssetImage(AppImages.homeNor), color: AppColors.color_FFFFFF, size: Screen.sp(55),),
+                              child: ImageIcon(AssetImage(AppImages.mineSel), color: AppColors.color_666666, size: Screen.sp(55),),
                               onTap: () {
                                 _alertDialog();
                               },
@@ -68,8 +62,8 @@ class MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin{
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("智客新人", style: TextStyle(fontSize: Screen.sp(46), color: AppColors.color_FFFFFF),),
-                                Text("查看并编辑个人资料", style: TextStyle(fontSize: Screen.sp(29), color: AppColors.color_FFFFFF),),
+                                Text("智客新人", style: TextStyle(fontSize: Screen.sp(52),fontWeight:FontWeight.bold, color: AppColors.color_000000),),
+                                Text("普通经纪人", style: TextStyle(fontSize: Screen.sp(29), color: AppColors.color_434343),),
                               ],
                             )
                           ],
@@ -78,31 +72,24 @@ class MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin{
                     ),
                   ),
                 ),
+                Positioned(
+                  top: Screen.h(420),
+                  left: Screen.w(45),
+                  right: Screen.w(45),
+                  child: topContainer,
+                ),
                 SizeDivider(height: Screen.h(150)),
                 Padding(padding: EdgeInsets.all(Screen.w(45),), child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text("我的任务", style: TextStyle(fontSize: Screen.sp(46), color: AppColors.color_333333, fontWeight: FontWeight.bold),),
-                    Text("｜ 赶紧去做任务赚钱", style: TextStyle(fontSize: Screen.sp(29), color: AppColors.color_999999,),),
+                    Text("我的服务", style: TextStyle(fontSize: Screen.sp(46), color: AppColors.color_333333, fontWeight: FontWeight.bold),),
                   ],
                 ),),
-                topApply,
+                bottomContainer,
                 Container(height: Screen.h(30), color: AppColors.color_f8f8f8),
-                Padding(padding: EdgeInsets.all(Screen.w(45),), child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text("帮助中心", style: TextStyle(fontSize: Screen.sp(46), color: AppColors.color_333333, fontWeight: FontWeight.bold),),
-                  ],
-                ),),
-                bottomHelp,
               ],
             ),
-            Positioned(
-              top: Screen.h(420),
-              left: Screen.w(45),
-              right: Screen.w(45),
-              child: topContainer,
-            )
+
           ],
         ),
       ),
@@ -126,7 +113,9 @@ class MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin{
               FlatButton(
                   child: Text("确定"),
                   onPressed: () async {
-                    NavigatorUtil.pushAndRemoveUtil(context, LoginUi(), (Route<dynamic> route) => false);
+                    // NavigatorUtil.pushAndRemoveUtil(context, LoginUi(), (Route<dynamic> route) => false);
+                    Navigator.pop(context);
+                    NavigatorUtil.push(context, LoginUi());
                   }),
             ],
           );
@@ -134,59 +123,74 @@ class MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin{
     return alertDialogs;
   }
 
-  Widget get topContainer => Card(
-    child: Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(Screen.w(14))),
-        color: AppColors.color_FFFFFF,
-      ),
+  Widget get topContainer => Container(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          itemApply(AppImages.homeNor, "实名信息"),
-          itemApply(AppImages.homeNor, "我的协议"),
-          itemApply(AppImages.homeNor, "个人简历"),
-          itemApply(AppImages.homeNor, "收款方式"),
+          topContainerItem("0", "我的关注"),
+          topContainerItem("0", "我的活动"),
+          topContainerItem("0", "我的卡包"),
         ],
       ),
-    ),
   );
 
-  Widget get topApply => Container(
-    color: AppColors.color_FFFFFF,
+  Widget get midContainer => Container(
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        itemApply(AppImages.homeNor, "已申请"),
-        itemApply(AppImages.homeNor, "申请通过"),
-        itemApply(AppImages.homeNor, "进行中"),
-        itemApply(AppImages.homeNor, "已完成"),
-        itemApply(AppImages.homeNor, "已结算")
+
       ],
     ),
   );
 
-  Widget get bottomHelp => Container(
+  Widget get bottomContainer => Container(
     color: AppColors.color_FFFFFF,
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+    margin: EdgeInsets.all(Screen.w(45)),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        itemApply(AppImages.homeNor, "客服咨询"),
-        itemApply(AppImages.homeNor, "投诉建议"),
-        itemApply(AppImages.homeNor, "关于我们"),
+        bottomContainerItem(AppImages.homeNor, "发展经纪人"),
+        bottomContainerItem(AppImages.homeNor, "置业顾问"),
+        bottomContainerItem(AppImages.homeNor, "我的预约"),
+        bottomContainerItem(AppImages.homeNor, "我的消息"),
+        bottomContainerItem(AppImages.homeNor, "意见反馈")
       ],
     ),
   );
 
-  Widget itemApply(String image, String title) => Container(
+
+  Widget topContainerItem(String count, String title) => Container(
     margin: EdgeInsets.all(Screen.w(45)),
     color: AppColors.color_FFFFFF,
     child: Column(
       children: [
-        Image.asset(image, width: Screen.w(70), height: Screen.w(70),),
+        Text(count, style: TextStyle(color: AppColors.color_4a73ff, fontSize: Screen.sp(30)),),
         SizeDivider(height: Screen.h(30)),
         Text(title, style: TextStyle(color: AppColors.color_666666, fontSize: Screen.sp(35))),
       ],
     ),
   );
+
+  // Widget midContainerItem
+  Widget midContainerItem(String title,{String money}) => Container(
+    margin: EdgeInsets.all(Screen.w(15)),
+    child: Row(
+
+    ),
+  );
+
+  Widget bottomContainerItem(String image,String title) => Container(
+    margin: EdgeInsets.all(Screen.w(15)),
+    padding: EdgeInsets.all(Screen.w(15)),
+    color: AppColors.color_FFFFFF,
+    child: Row(
+      children: [
+        Image.asset(image, width: Screen.w(70), height: Screen.w(70),),
+        SizeDivider(height: Screen.h(30)),
+        Padding(padding: EdgeInsets.only(left: Screen.w(35), right: 0, top: 0, bottom: 0),
+          child: Text(title, style: TextStyle(color: AppColors.color_666666, fontSize: Screen.sp(35)))),
+      ],
+    ),
+  );
+
 }

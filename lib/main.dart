@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:zk/ui/main_page.dart';
 import 'package:provider/provider.dart';
+import 'package:zk/ui/login/login_ui.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         routes: {
+          "/login": (context) => LoginUi(),
           "/home": (context) => MainPage()
         },
         locale: const Locale('zh'),
