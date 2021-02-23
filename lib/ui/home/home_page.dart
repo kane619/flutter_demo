@@ -6,6 +6,8 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:zk/constant/app_colors.dart';
 import 'package:zk/util/screen_util.dart';
 import 'package:zk/widget/icon_text.dart';
+import 'package:zk/widget/config_square.dart';
+import 'package:zk/res/listData.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,6 +20,11 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
   @override
 //  切换tab后保留tab的状态，避免initState方法重复调用
   bool get wantKeepAlive => true; //必须重写
+
+  List _getData(){
+    var tempList = listData.map((e) => )
+  }
+
 
   @override
   // ignore: must_call_super
@@ -99,52 +106,7 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
                 ],
               ),
             ),
-            Row(
-              children: [
-                Expanded(
-                    flex: 1,
-                    child: Container(
-                      height: 180,
-                      // color: Colors.yellow,
-                      child: Image.network(
-                          "https://www.itying.com/images/flutter/2.png"),
-                    )),
-                SizedBox(width: 10),
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    // color: Colors.green,
-                    height: 150,
-                    child: Column(
-                      children: [
-                        Expanded(
-                            child: Container(
-                          height: 70,
-                          width: 300,
-                          color: Colors.blue,
-                          child: Image.network(
-                            "https://www.itying.com/images/flutter/2.png",
-                            fit: BoxFit.cover,
-                          ),
-                        )),
-                        // SizedBox(width: 10),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                          child: Expanded(
-                              child: Container(
-                            height: 70,
-                            width: 300,
-                            child: Image.network(
-                                "https://www.itying.com/images/flutter/2.png",
-                                fit: BoxFit.cover),
-                          )),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            )
+            ConfigSquareWidget(listData[2])
           ],
         ),
       ),
