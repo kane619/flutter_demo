@@ -10,7 +10,7 @@ class BaseBean<T> {
     return BaseBean(
       data: json['data'],
       errorCode: json['code'],
-      errorMsg: json['msg'],
+      errorMsg: json['message'],
     );
   }
 
@@ -18,7 +18,7 @@ class BaseBean<T> {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['data'] = this.data;
     data['code'] = this.errorCode;
-    data['msg'] = this.errorMsg;
+    data['message'] = this.errorMsg;
     return data;
   }
 }

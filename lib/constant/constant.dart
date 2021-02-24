@@ -3,12 +3,12 @@ class Constant {
   static final bool Debug = true;
 
   /// base url
-  // static final String BaseUrl = "http://192.168.10.16:8084/";
   // static final String BaseUrl = "http://351x29514o.zicp.vip/"; /// 内网穿透
-  static final String BaseUrl = "http://139.224.40.178:8080/"; /// 服务器地址
+  // ignore: non_constant_identifier_names
+  static final String BaseUrl = "https://zk.movitech.cn:18443/portalClient/portalClientApi/"; /// 服务器地址
 
   /// test image url
-  static final String TestImage = "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg";
+  static final String TestImage = "http://zyx-local.oss-cn-shanghai.aliyuncs.com/zk/2021/2/3/a52e43753c4746a6895332868e79afd7.png";
 
   /// pageSize
   static final int PAGE_SIZE = 10; // 默认十条
