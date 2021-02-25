@@ -47,11 +47,11 @@ class _LoginUiState extends State<LoginUi> {
           builder: (context, model, child) {
             return Scaffold(
               appBar: AppBar(shadowColor: Colors.transparent, backgroundColor: AppColors.color_FFFFFF, actions: [
-                GestureDetector(child: Container(child: Text("注册", style: TextStyle(color: AppColors.color_333333, fontSize: Screen.sp(46)),), alignment: Alignment.center, padding: EdgeInsets.only(right: Screen.w(45)),), onTap: () {
-                  // NavigatorUtil.push(context, RegisterUi());
-                },
-                )
-              ],),
+                // GestureDetector(child: Container(child: Text("注册", style: TextStyle(color: AppColors.color_333333, fontSize: Screen.sp(46)),), alignment: Alignment.center, padding: EdgeInsets.only(right: Screen.w(45)),), onTap: () {
+                //   // NavigatorUtil.push(context, RegisterUi());
+                // },
+                // )
+              ]),
               backgroundColor: AppColors.color_FFFFFF,
               body: GestureDetector(
                 behavior: HitTestBehavior.translucent,
@@ -118,7 +118,7 @@ class _LoginUiState extends State<LoginUi> {
                             _canClickButton(model);
                           }),
                           SizeDivider(width: Screen.w(20)),
-                          Expanded(child: Text("我已阅读并同意《蓝吧社区隐私政策》及《蓝吧社区用户服务协议》", style: TextStyle(color: AppColors.color_999999, fontSize: Screen.sp(35),)),),
+                          Expanded(child: Text("我已阅读并同意《盟拓隐私政策》及《盟拓用户服务协议》", style: TextStyle(color: AppColors.color_999999, fontSize: Screen.sp(35),)),),
                         ],),
                       SizeDivider(height: Screen.h(120)),
 

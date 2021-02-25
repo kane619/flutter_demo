@@ -22,6 +22,7 @@ class MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin{
   bool get wantKeepAlive => true; //必须重写
 
   @override
+  // ignore: must_call_super
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -40,7 +41,7 @@ class MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin{
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             GestureDetector(
-                              child: ImageIcon(AssetImage(AppImages.mineSel), color: AppColors.color_666666, size: Screen.sp(55),),
+                              child: Icon(Icons.settings),
                               onTap: () {
                                 _alertDialog();
                               },
@@ -72,24 +73,25 @@ class MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin{
                     ),
                   ),
                 ),
-                Positioned(
-                  top: Screen.h(420),
-                  left: Screen.w(45),
-                  right: Screen.w(45),
-                  child: topContainer,
-                ),
-                SizeDivider(height: Screen.h(150)),
-                Padding(padding: EdgeInsets.all(Screen.w(45),), child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text("我的服务", style: TextStyle(fontSize: Screen.sp(46), color: AppColors.color_333333, fontWeight: FontWeight.bold),),
-                  ],
-                ),),
-                bottomContainer,
+                SizeDivider(height: Screen.h(50)),
                 Container(height: Screen.h(30), color: AppColors.color_f8f8f8),
+                Padding(padding: EdgeInsets.fromLTRB(Screen.h(30), Screen.h(30), 0, 0), child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(padding: EdgeInsets.fromLTRB(Screen.h(30), Screen.h(30), 0, 0),
+                      child: Text("我的服务", style: TextStyle(fontSize: Screen.sp(46), color: AppColors.color_333333, fontWeight: FontWeight.bold),),
+                    )
+                  ],
+                )),
+                bottomContainer,
               ],
             ),
-
+            Positioned(
+              top: Screen.h(420),
+              left: Screen.w(45),
+              right: Screen.w(45),
+              child: topContainer,
+            ),
           ],
         ),
       ),
@@ -164,7 +166,7 @@ class MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin{
     color: AppColors.color_FFFFFF,
     child: Column(
       children: [
-        Text(count, style: TextStyle(color: AppColors.color_4a73ff, fontSize: Screen.sp(30)),),
+        Text(count, style: TextStyle(color: AppColors.color_ff0000, fontSize: Screen.sp(40), fontWeight: FontWeight.bold),),
         SizeDivider(height: Screen.h(30)),
         Text(title, style: TextStyle(color: AppColors.color_666666, fontSize: Screen.sp(35))),
       ],

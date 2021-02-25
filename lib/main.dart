@@ -12,7 +12,7 @@ import 'package:zk/ui/main_page.dart';
 import 'package:provider/provider.dart';
 import 'package:zk/ui/login/login_ui.dart';
 import 'package:zk/util/sp_util.dart';
-
+import 'package:zk/ui/webview/webview_widget.dart';
 import 'constant/config.dart';
 import 'constant/constant.dart';
 
@@ -65,7 +65,8 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           "/login": (context) => LoginUi(),
-          "/home": (context) => MainPage()
+          "/home": (context) => MainPage(),
+          "/web": (context) => WebViewWidget()
         },
         locale: const Locale('zh'),
         localizationsDelegates: [
