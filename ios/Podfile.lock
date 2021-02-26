@@ -1,8 +1,18 @@
 PODS:
+  - BaiduMapKit/Base (6.2.0)
+  - BaiduMapKit/Utils (6.2.0):
+    - BaiduMapKit/Base
+  - BMKLocationKit (2.0.0)
   - connectivity (0.0.1):
     - Flutter
     - Reachability
   - Flutter (1.0.0)
+  - flutter_baidu_mapapi_base (2.0.0):
+    - BaiduMapKit/Utils (= 6.2.0)
+    - Flutter
+  - flutter_bmflocation (1.0.3):
+    - BMKLocationKit
+    - Flutter
   - fluttertoast (0.0.2):
     - Flutter
   - image_cropper (0.0.3):
@@ -12,7 +22,7 @@ PODS:
     - Flutter
   - path_provider (0.0.1):
     - Flutter
-  - permission_handler (3.3.0):
+  - "permission_handler (5.1.0+2)":
     - Flutter
   - Reachability (3.2)
   - shared_preferences (0.0.1):
@@ -26,6 +36,8 @@ PODS:
 DEPENDENCIES:
   - connectivity (from `.symlinks/plugins/connectivity/ios`)
   - Flutter (from `Flutter`)
+  - flutter_baidu_mapapi_base (from `.symlinks/plugins/flutter_baidu_mapapi_base/ios`)
+  - flutter_bmflocation (from `.symlinks/plugins/flutter_bmflocation/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - image_cropper (from `.symlinks/plugins/image_cropper/ios`)
   - image_picker (from `.symlinks/plugins/image_picker/ios`)
@@ -37,6 +49,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - BaiduMapKit
+    - BMKLocationKit
     - Reachability
     - TOCropViewController
 
@@ -45,6 +59,10 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/connectivity/ios"
   Flutter:
     :path: Flutter
+  flutter_baidu_mapapi_base:
+    :path: ".symlinks/plugins/flutter_baidu_mapapi_base/ios"
+  flutter_bmflocation:
+    :path: ".symlinks/plugins/flutter_bmflocation/ios"
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
   image_cropper:
@@ -63,13 +81,17 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/webview_flutter/ios"
 
 SPEC CHECKSUMS:
+  BaiduMapKit: 907c6d9b74f66c3ff4741fc4b568ae0b339917f8
+  BMKLocationKit: 097814ef672b1e57e86e6c1968d7892fb78002bf
   connectivity: c4130b2985d4ef6fd26f9702e886bd5260681467
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_baidu_mapapi_base: 90fddba11ec4435406a7211d6ee905b4311c31db
+  flutter_bmflocation: 12f1ba91bae4b16d78d4f475023e0254ed351f1c
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
   image_cropper: c8f9b4157933c7bb965a66d1c5e6c8fd408c6eb4
   image_picker: 9c3312491f862b28d21ecd8fdf0ee14e601b3f09
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
-  permission_handler: 67637977b227d62d46bfbf524f335f8568de5a73
+  permission_handler: ccb20a9fad0ee9b1314a52b70b76b473c5f8dab0
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
   TOCropViewController: da59f531f8ac8a94ef6d6c0fc34009350f9e8bfe

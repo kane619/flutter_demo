@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:zk/constant/app_colors.dart';
 import 'package:zk/constant/constant.dart';
 import 'package:zk/ui/webview/webview_widget.dart';
@@ -14,8 +13,10 @@ import 'package:zk/widget/common_widget.dart';
 import 'package:zk/widget/icon_text.dart';
 import 'package:zk/widget/config_square.dart';
 import 'package:zk/res/listData.dart';
-import 'package:zk/widget/page/photo_gallery_view_page.dart';
-import 'package:zk/widget/square.dart';
+import 'package:zk/widget/square/square.dart';
+import 'package:zk/widget/swiper_widget.dart';
+import 'package:zk/widget/square/square4.dart';
+import 'package:zk/widget/square/square3.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -46,11 +47,11 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: NetworkImage(Constant.TestImage),
-                          fit: BoxFit.cover),
-                    ),
+                    // decoration: BoxDecoration(
+                    //   image: DecorationImage(
+                    //       image: NetworkImage(Constant.TestImage),
+                    //       fit: BoxFit.cover),
+                    // ),
                     child: Column(
                       children: [
                         Padding(
@@ -64,12 +65,12 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
                                   textAlign: TextAlign.center,
                                   icon: Icon(
                                     Icons.location_on,
-                                    color: AppColors.color_FFFFFF,
+                                    color: AppColors.color_000000,
                                   ),
                                   iconSize: Screen.sp(55),
                                   style: TextStyle(
                                     fontSize: Screen.sp(46),
-                                    color: AppColors.color_FFFFFF,
+                                    color: AppColors.color_000000,
                                   )),
                             ],
                           ),
@@ -77,49 +78,7 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
                         Container(
                           padding: EdgeInsets.all(Screen.w(45)),
                           height: Screen.h(432),
-                          child: Swiper(
-                            itemBuilder: (BuildContext context, int index) {
-                              return GestureDetector(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      image: DecorationImage(
-                                          image:
-                                              NetworkImage(Constant.TestImage),
-                                          fit: BoxFit.cover)),
-                                ),
-                                onTap: () {
-                                  NavigatorUtil.push(
-                                      context,
-                                      PhotoGalleryPage(
-                                        index: index,
-                                        // photoList: data.bannerList.map((e) => e.imageUrl).toList(),
-                                      ));
-                                },
-                              );
-                            },
-                            loop: true,
-                            autoplay: true,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 6,
-                            pagination: SwiperPagination(
-                                // 分页指示器
-                                alignment: Alignment.bottomCenter,
-                                // 位置 Alignment.bottomCenter 底部中间
-                                margin: const EdgeInsets.fromLTRB(0, 0, 0, 5),
-                                // 距离调整
-                                builder: DotSwiperPaginationBuilder(
-                                    // 指示器构建
-                                    space: ScreenUtil().setWidth(5),
-                                    // 点之间的间隔
-                                    size: ScreenUtil().setWidth(12),
-                                    // 没选中时的大小
-                                    activeSize: ScreenUtil().setWidth(15),
-                                    // 选中时的大小
-                                    color: Colors.black54,
-                                    // 没选中时的颜色
-                                    activeColor: Colors.white)), // 选中时的颜色
-                          ),
+                          child: SwiperWidget(),
                         ),
                       ],
                     ),
@@ -150,7 +109,27 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
                       scrollDirection: Axis.horizontal,
                     ),
                   ),
-                  SquareWidget()
+                  Container(
+                    // margin: EdgeInsets.all(Screen.w(10)),
+                    // height: Screen.h(260),
+                    constraints: BoxConstraints(
+                      minHeight: Screen.h(280),
+                      //   maxWidth: ScreenUtil.screenWidth
+                    ),
+                    // alignment: Alignment.center,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // Text("一行四列"),
+                        SquareWidget()
+                      ],
+                    ),
+                  ),
+                  Square4("l2m0r2"),
+                  Square3("l1m0r2"),
+                  Square4("2"),
+                  Square3("t1bl1br1")
                 ],
               ),
             ),

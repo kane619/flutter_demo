@@ -39,7 +39,7 @@ dependencies:
   shared_preferences: ^0.5.6 #存储
   synchronized: '>=2.0.2 <4.0.0'
   provider: ^3.0.0 #状态更改
-  permission_handler: ^3.3.0 #权限申请
+  permission_handler: ^5.1.0+2 #权限申请
   webview_flutter: ^0.3.21  #WebView
   url_launcher: ^5.4.5  #打开浏览器
   image_picker: ^0.6.6+1  #选择图片
@@ -48,7 +48,7 @@ dependencies:
   flutter_spinkit: ^4.0.0 #加载框
   flutter_swiper: ^1.1.6 #轮播图
   photo_view: ^0.4.2 #图片预览
-
+  flutter_bmflocation: ^1.0.2 #图片预览  注意地图申请与permission_handler相关
 dev_dependencies:
   flutter_test:
     sdk: flutter

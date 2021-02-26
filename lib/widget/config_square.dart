@@ -225,7 +225,4 @@ class ConfigSquareWidget extends StatelessWidget {
     // return Container();
   }
 
-
-
-
 }
