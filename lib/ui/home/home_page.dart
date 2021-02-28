@@ -110,10 +110,8 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
                     ),
                   ),
                   Container(
-                    // margin: EdgeInsets.all(Screen.w(10)),
-                    // height: Screen.h(260),
                     constraints: BoxConstraints(
-                      minHeight: Screen.h(280),
+                      maxHeight: 180,
                       //   maxWidth: ScreenUtil.screenWidth
                     ),
                     // alignment: Alignment.center,
@@ -126,9 +124,22 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
                       ],
                     ),
                   ),
-                  Square4("l2m0r2"),
+                  SizedBox(height: 10),
+                  Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // Text("一行四列"),
+                        Square4("l2m0r2")
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 10),
                   Square3("l1m0r2"),
+                  SizedBox(height: 10),
                   Square4("2"),
+                  SizedBox(height: 10),
                   Square3("t1bl1br1")
                 ],
               ),

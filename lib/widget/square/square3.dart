@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:zk/constant/constant.dart';
 import 'package:zk/util/screen_util.dart';
 
 class Square3 extends StatelessWidget {
@@ -18,41 +18,26 @@ class Square3 extends StatelessWidget {
                 flex: 1,
                 child: Container(
                   height: 180,
-                  // color: Colors.yellow,
-                  child: Image.network(
-                      "https://www.itying.com/images/flutter/1.png"),
+                  child: Image.network(Constant.TestImage1, fit: BoxFit.cover),
                 )),
             SizedBox(width: 10),
             Expanded(
-              flex: 1,
-              child: Container(
-                // color: Colors.green,
-                height: 150,
-                child: Column(
-                  children: [
-                    Expanded(
-                        child: Container(
-                      // height: 75,
-                      width: 300,
-                      color: Colors.blue,
-                      child: Image.network(
-                        "https://www.itying.com/images/flutter/2.png",
-                        fit: BoxFit.cover,
-                      ),
-                    )),
-                    // SizedBox(width: 10),
-                    Expanded(
-                        child: Container(
-                      // height: 75,
-                      width: 300,
-                      child: Image.network(
-                          "https://www.itying.com/images/flutter/3.png",
-                          fit: BoxFit.cover),
-                    ))
-                  ],
-                ),
-              ),
-            ),
+                flex: 1,
+                child: Container(
+                    height: 180,
+                    child: ListView(
+                      children: <Widget>[
+                        Container(
+                          height: 85,
+                          child: Image.network(Constant.TestImage2, fit: BoxFit.cover),
+                        ),
+                        SizedBox(height: 10),
+                        Container(
+                          height: 85,
+                          child: Image.network(Constant.TestImage3, fit: BoxFit.cover),
+                        )
+                      ],
+                    ))),
           ],
         ),
       );
@@ -61,40 +46,31 @@ class Square3 extends StatelessWidget {
       return Padding(
         padding: EdgeInsets.only(left: 10, right: 10),
         child: Container(
-          height: Screen.h(500),
+          height: 180,
           child: Column(
             children: [
               Expanded(
                 flex: 1,
                   child: Container(
-                    width: ScreenUtil.screenWidthDp,
+                    width: double.infinity,
                     height: Screen.h(230),
-                    child: Image.network(
-                      "https://www.itying.com/images/flutter/1.png",
-                      fit: BoxFit.cover,
-                    ),
+                    child: Image.network(Constant.TestImage1,fit: BoxFit.cover),
                   )),
-              SizedBox(width: 10),
+              SizedBox(height: 10),
               Row(
                 children: [
                   Expanded(
                       flex: 1,
                       child: Container(
                         height: Screen.h(230),
-                        child: Image.network(
-                          "https://www.itying.com/images/flutter/2.png",
-                          fit: BoxFit.cover,
-                        ),
+                        child: Image.network(Constant.TestImage2,fit: BoxFit.cover),
                       )),
                   SizedBox(width: 10),
                   Expanded(
                       flex: 1,
                       child: Container(
                         height: Screen.h(230),
-                        child: Image.network(
-                          "https://www.itying.com/images/flutter/3.png",
-                          fit: BoxFit.cover,
-                        ),
+                        child: Image.network(Constant.TestImage3,fit: BoxFit.cover),
                       )),
                 ],
               )

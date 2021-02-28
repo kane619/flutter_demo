@@ -7,56 +7,38 @@ class SquareWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+        padding: EdgeInsets.fromLTRB(Screen.w(20), 0, Screen.w(20), 0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Expanded(
-          //     flex: 1,
-          //     child: Container(
-          //       height: 140,
-          //       child: Image.network(Constant.TestImage),
-          //     )),
-          // SizedBox(width: 10),
-          // Expanded(
-          //     flex: 1,
-          //     child: Container(
-          //         height: 140,
-          //         child: Image.network(Constant.TestImage))),
-          // SizedBox(width: 10),
-          // Expanded(
-          //     flex: 1,
-          //     child: Container(
-          //       height: 140,
-          //       child: Image.network(Constant.TestImage),
-          //     )),
-          // SizedBox(width: 10),
-          // Expanded(
-          //     flex: 1,
-          //     child: Container(
-          //       height: 140,
-          //       child: Image.network(Constant.TestImage),
-          //     )),
           Container(
-            color: Colors.green,
-            width: (ScreenUtil.screenWidthDp/4-13),
-            height: 100,
-            child: Image.network(Constant.TestImage),
+            width: (ScreenUtil.screenWidthDp/5-11),
+            height: Screen.h(180),
+            child: Image.network(Constant.TestImage,fit: BoxFit.fill),
           ),
           SizedBox(width: 10),
           Container(
-            width: (ScreenUtil.screenWidthDp/4-13),
-            child: Image.network(Constant.TestImage),
+            width: (ScreenUtil.screenWidthDp/5-11),
+            height: Screen.h(180),
+            child: Image.network(Constant.TestImage,fit: BoxFit.fill),
           ),
           SizedBox(width: 10),
           Container(
-            width: (ScreenUtil.screenWidthDp/4-13),
-            child: Image.network(Constant.TestImage),
+            width: (ScreenUtil.screenWidthDp/5-11),
+            height: Screen.h(180),
+            child: Image.network(Constant.TestImage,fit: BoxFit.fill),
           ),
           SizedBox(width: 10),
           Container(
-            width: (ScreenUtil.screenWidthDp/4-13),
-            child: Image.network(Constant.TestImage),
+            width: (ScreenUtil.screenWidthDp/5-11),
+            height: Screen.h(180),
+            child: Image.network(Constant.TestImage,fit: BoxFit.fill),
+          ),
+          SizedBox(width: 10),
+          Container(
+            width: (ScreenUtil.screenWidthDp/5-11),
+            height: Screen.h(180),
+            child: Image.network(Constant.TestImage,fit: BoxFit.fill),
           ),
         ],
       )
