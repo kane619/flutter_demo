@@ -186,11 +186,13 @@ class MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin{
     padding: EdgeInsets.all(Screen.w(15)),
     color: AppColors.color_FFFFFF,
     child: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Image.asset(image, width: Screen.w(70), height: Screen.w(70),),
-        SizeDivider(height: Screen.h(30)),
+        SizeDivider(width: Screen.w(30)),
         Padding(padding: EdgeInsets.only(left: Screen.w(35), right: 0, top: 0, bottom: 0),
           child: Text(title, style: TextStyle(color: AppColors.color_666666, fontSize: Screen.sp(35)))),
+        Icon(Icons.keyboard_arrow_right_outlined)
       ],
     ),
   );

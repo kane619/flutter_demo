@@ -140,7 +140,8 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
                   SizedBox(height: 10),
                   Square4("2"),
                   SizedBox(height: 10),
-                  Square3("t1bl1br1")
+                  Square3("t1bl1br1"),
+                  SizedBox(height: 10),
                 ],
               ),
             ),
